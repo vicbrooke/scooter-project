@@ -56,13 +56,13 @@ describe("scooter methods", () => {
   });
   //rent method
   describe("rent method", () => {
-    it("should log to the console if isBroken === false && charge > 20", () => {
-      scooter1.charge = 50;
+    it("should log to the console if isBroken === false && charge === 100", () => {
+      scooter1.charge = 100;
       let log = jest.spyOn(console, "log");
       scooter1.rent();
       expect(log).toHaveBeenCalledWith("Enjoy the ride!");
     });
-    it("should throw and error when charge is <= 20", () => {
+    it("should throw and error when charge is <= 99", () => {
       scooter1.charge = 10;
       expect(() => {
         scooter1.rent();
@@ -71,7 +71,7 @@ describe("scooter methods", () => {
     it("should throw and error if isBroken === true", () => {
       scooter1.isBroken = true;
       expect(() => {
-        scooter1.charge = 50;
+        scooter1.charge = 100;
         scooter1.rent();
       }).toThrow("Scooter is broken, please send a repair request.");
     });

@@ -9,10 +9,10 @@ class Scooter {
   }
 
   rent() {
-    if (!this.isBroken && this.charge > 20) {
+    if (!this.isBroken && this.charge === 100) {
       this.docked = false;
       console.log("Enjoy the ride!");
-    } else if (this.charge <= 20) {
+    } else if (this.charge <= 99) {
       throw new Error("Scooter low on battery, please charge.");
     } else {
       throw new Error("Scooter is broken, please send a repair request.");
