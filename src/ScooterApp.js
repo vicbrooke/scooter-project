@@ -14,6 +14,9 @@ class ScooterApp {
   }
 
   register(user) {
+    if (user.age < 17) {
+      console.log("Too young to register!");
+    }
     this.registeredUsers[user.username] = {
       password: user.password,
       age: user.age,

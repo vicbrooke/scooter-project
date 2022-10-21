@@ -33,6 +33,12 @@ describe("scooterApp methods", () => {
       scooterApp1.register(user1);
       expect(log).toHaveBeenCalledWith("User has been registered.");
     });
+    it("if user age < 17 return message", () => {
+      const user2 = new User("Sam", "abc123", 15);
+      let log = jest.spyOn(console, "log");
+      scooterApp1.register(user2);
+      expect(log).toHaveBeenCalledWith("Too young to register!");
+    });
   });
 });
 
