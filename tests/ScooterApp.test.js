@@ -78,6 +78,11 @@ describe("scooterApp methods", () => {
     it("should add scooter argument to stations", () => {
       expect(scooterApp1.stations.Bronx).toEqual([scooter1]);
     });
+    it.only("should only add scooter if location and scooter information are passed", () => {
+      expect(() => {
+        scooterApp1.addScooter();
+      }).toThrow("Need location and scooter information!");
+    });
   });
   //remove scooter
   describe("removeScooter(scooterToRemove", () => {

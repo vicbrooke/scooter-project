@@ -42,12 +42,14 @@ class ScooterApp {
   }
 
   addScooter(location, scooter) {
+    if (!location || !scooter) {
+      throw new Error("Need location and scooter information!");
+    }
     scooter.station = location;
     this.stations[location].push(scooter);
   }
 
   removeScooter(scooterToRemove) {
-    const location = scooterToRemove.station;
     const scooterSerial = scooterToRemove.serial;
 
     for (const key in this.stations) {
