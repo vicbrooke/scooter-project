@@ -79,6 +79,10 @@ describe("scooter methods", () => {
         scooter1.dock();
       }).toThrow("Docking station required!");
     });
+    it("should set docked property to true", () => {
+      scooter1.dock("Brooklyn");
+      expect(scooter1.docked).toBe(true);
+    });
   });
   //requestRepair method
   //charge method

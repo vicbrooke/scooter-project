@@ -20,6 +20,7 @@ class Scooter {
       throw new Error("Docking station required!");
     }
     this.station = station;
+    this.docked = true;
   }
 }
 
