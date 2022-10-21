@@ -23,6 +23,13 @@ describe("scooter object", () => {
   it("user property should be an object", () => {
     expect(typeof scooter1.user).toBe("object");
   });
+  it("should have a serial property which is a random number between 1 and 1000", () => {
+    expect(typeof scooter1.serial).toBe("number");
+  });
+  it("serial property should be >=1 and <=1000", () => {
+    expect(scooter1.serial).toBeGreaterThanOrEqual(1);
+    expect(scooter1.serial).toBeLessThanOrEqual(1000);
+  });
 });
 
 //Method tests
