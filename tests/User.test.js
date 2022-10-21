@@ -14,4 +14,7 @@ describe("tests for User class", () => {
     expect(user1.password).toBe("abc123");
   });
   // test age
+  it("should have an age property", () => {
+    expect(user1.age).toBe(20);
+  });
 });
