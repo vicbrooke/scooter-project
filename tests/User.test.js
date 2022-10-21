@@ -9,8 +9,9 @@ describe("tests for User class", () => {
   it("should have a username property", () => {
     expect(user1.username).toBe("John");
   });
+  // test password
+  it("should have a password property", () => {
+    expect(user1.password).toBe("abc123");
+  });
+  // test age
 });
-
-// test password
-
-// test age
