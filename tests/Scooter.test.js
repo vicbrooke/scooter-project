@@ -47,17 +47,23 @@ describe("scooter object", () => {
 
 //Method tests
 describe("scooter methods", () => {
+  beforeEach(() => {
+    user1 = new User("John", "abc123", 20);
+    scooter1 = new Scooter("Manhattan", user1);
+  });
   //rent method
   describe("rent method", () => {
-    beforeEach(() => {
-      user1 = new User("John", "abc123", 20);
-      scooter1 = new Scooter("Manhattan", user1);
-    });
     it("should throw and error when charge is <= 20", () => {
       scooter1.charge = 10;
       expect(() => {
         scooter1.rent();
       }).toThrow("Scooter low on battery, please charge");
+    });
+    it("should throw and error if isBroken === true", () => {
+      scooter1.isBroken = true;
+      expect(() => {
+        scooter1.rent();
+      }).toThrow("Scooter is broken, please send a repair request.");
     });
   });
 

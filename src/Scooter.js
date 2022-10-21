@@ -12,6 +12,7 @@ class Scooter {
     if (this.charge <= 20) {
       throw new Error("Scooter low on battery, please charge.");
     }
+    throw new Error("Scooter is broken, please send a repair request.");
   }
 }
 
