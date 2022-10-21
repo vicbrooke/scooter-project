@@ -113,5 +113,10 @@ describe("scooter methods", () => {
       await scooter1.requestRepair();
       expect(log).toHaveBeenCalledWith("Repair complete");
     });
+    it("should set isBroken property to false once repair is complete", async () => {
+      scooter1.isBroken = true;
+      await scooter1.requestRepair();
+      expect(scooter1.isBroken).toBe(false);
+    });
   });
 });
