@@ -54,13 +54,7 @@ describe("scooterApp methods", () => {
   });
 });
 // log in
-// describe("logIn(username, password", () => {
-//   it("user not in registerdUsers or password does not match return message ", () => {
-//     let log = jest.spyOn(console, "log");
-//     scooterApp1.logIn(user1);
-//     expect(log).toHaveBeenCalledWith("Username or password is incorrect.");
-//   });
-// });
+
 // add scooter
 
 // remove scooter

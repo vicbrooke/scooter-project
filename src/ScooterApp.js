@@ -29,8 +29,6 @@ class ScooterApp {
       console.log("User has been registered.");
     }
   }
-
-  logIn(username, password) {}
 }
 
 module.exports = ScooterApp;
