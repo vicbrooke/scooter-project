@@ -16,8 +16,8 @@ describe("ScooterApp object", () => {
   it("should have a registeredUsersProperty", () => {
     expect(scooterApp1).toHaveProperty("registeredUsers");
   });
-  it.skip("registeredUsers property should be an array", () => {
-    expect(Array.isArray(scooterApp1.registeredUsers)).toBe(true);
+  it("registeredUsers property should be an object", () => {
+    expect(typeof scooterApp1.registeredUsers).toBe("object");
   });
 });
 
@@ -43,11 +43,24 @@ describe("scooterApp methods", () => {
       scooterApp1.register(user2);
       expect(log).toHaveBeenCalledWith("Too young to register!");
     });
+    it("if user is already registered return message", () => {
+      let log = jest.spyOn(console, "log");
+      scooterApp1.register(user1);
+      scooterApp1.register(user1);
+      console.log(user1.username);
+      console.log(scooterApp1.registeredUsers);
+      expect(log).toHaveBeenCalledWith("User already registered!");
+    });
   });
 });
-
 // log in
-
+// describe("logIn(username, password", () => {
+//   it("user not in registerdUsers or password does not match return message ", () => {
+//     let log = jest.spyOn(console, "log");
+//     scooterApp1.logIn(user1);
+//     expect(log).toHaveBeenCalledWith("Username or password is incorrect.");
+//   });
+// });
 // add scooter
 
 // remove scooter
