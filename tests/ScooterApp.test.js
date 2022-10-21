@@ -78,7 +78,7 @@ describe("scooterApp methods", () => {
     it("should add scooter argument to stations", () => {
       expect(scooterApp1.stations.Bronx).toEqual([scooter1]);
     });
-    it.only("should only add scooter if location and scooter information are passed", () => {
+    it("should only add scooter if location and scooter information are passed", () => {
       expect(() => {
         scooterApp1.addScooter();
       }).toThrow("Need location and scooter information!");
@@ -88,6 +88,7 @@ describe("scooterApp methods", () => {
   describe("removeScooter(scooterToRemove", () => {
     beforeEach(() => {
       scooter1 = new Scooter("Manhattan", user1);
+      scooter2 = new Scooter("Bronx", user2);
       scooterApp1.addScooter("Bronx", scooter1);
     });
     afterEach(() => {
@@ -102,5 +103,10 @@ describe("scooterApp methods", () => {
       scooterApp1.removeScooter(scooter1);
       expect(log).toHaveBeenCalledWith("Scooter successfully removed.");
     });
+    // it("should throw an error if scooter serial number is not located", () => {
+    //   expect(() => {
+    //     scooterApp1.removeScooter(scooter2);
+    //   }).toThrow("Serial number not located!");
+    // });
   });
 });

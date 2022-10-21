@@ -13,6 +13,8 @@ class ScooterApp {
     this.registeredUsers = {};
   }
 
+  static scooterSessions = [];
+
   register(user) {
     if (this.registeredUsers.hasOwnProperty(user.username)) {
       console.log("User already registered!");
@@ -59,6 +61,8 @@ class ScooterApp {
         console.log("Scooter successfully removed.");
       }
     }
+
+    // throw new Error("Serial number not located!");
   }
 }
 
