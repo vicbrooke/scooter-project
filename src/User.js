@@ -1,5 +1,7 @@
 class User {
-  // User code here
+  constructor(username) {
+    this.username = username;
+  }
 }
 
-module.exports = User
+module.exports = User;
