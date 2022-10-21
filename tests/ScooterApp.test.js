@@ -64,8 +64,21 @@ describe("scooterApp methods", () => {
       expect(scooterApp1.registeredUsers[user1.username].loggedIn).toBe(true);
     });
   });
+  // add scooter
+  describe("addScooter(location, scooter", () => {
+    beforeEach(() => {
+      scooter1 = new Scooter("Manhattan", user1);
+      scooterApp1.addScooter("Bronx", scooter1);
+    });
+    it("should set scooter's station property to location argument", () => {
+      const scooter1 = new Scooter("Manhattan", user1);
+      scooterApp1.addScooter("Bronx", scooter1);
+      expect(scooter1.station).toBe("Bronx");
+    });
+    it("should add scooter argument to stations", () => {
+      expect(scooterApp1.stations.Bronx).toEqual([scooter1]);
+    });
+  });
 });
-
-// add scooter
 
 // remove scooter

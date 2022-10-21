@@ -40,6 +40,11 @@ class ScooterApp {
       console.log("User logged in successfully");
     }
   }
+
+  addScooter(location, scooter) {
+    scooter.station = location;
+    this.stations[location].push(scooter);
+  }
 }
 
 module.exports = ScooterApp;
