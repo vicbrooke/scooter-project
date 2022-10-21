@@ -16,6 +16,9 @@ class Scooter {
   }
 
   dock(station) {
+    if (arguments.length === 0) {
+      throw new Error("Docking station required!");
+    }
     this.station = station;
   }
 }

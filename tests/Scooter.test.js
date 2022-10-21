@@ -74,6 +74,11 @@ describe("scooter methods", () => {
       scooter1.dock("Brooklyn");
       expect(scooter1.station).toBe("Brooklyn");
     });
+    it("should throw an error if no argument is passed in", () => {
+      expect(() => {
+        scooter1.dock();
+      }).toThrow("Docking station required!");
+    });
   });
   //requestRepair method
   //charge method
