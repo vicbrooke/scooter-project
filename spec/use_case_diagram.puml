@@ -1,0 +1,20 @@
+@startuml use_case
+left to right direction
+actor User as g
+actor Scooter as s
+package ScooterApp {
+usecase "Register user" as UC1
+usecase "Log in" as UC2
+usecase "Add scooter" as UC3
+usecase "Remove scooter" as UC4
+}
+
+g --> UC1: register(user)
+g --> UC2: logIn(username, password)
+g --> s: rent()
+s --> UC4
+g --> s: dock()
+s --> UC3
+
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml classDiagram
+
+User --> ScooterApp : register 
+User --> ScooterApp : log in 
+User --> Scooter: rent()
+Scooter --> ScooterApp: removes scooter 
+User --> Scooter: dock()
+Scooter --> ScooterApp: adds scooter 
+
+
+   class Scooter {
+   +string station
+   +string user
+   +number serial
+   +number charge
+   +boolean isBroken
+   +boolean docked
+
+   +rent()
+   +dock(station)
+   +recharge()
+   +requestRepair()   
+}
+
+   class User {
+   +string username
+   +string password
+   +number age
+   }
+
+   class ScooterApp {
+   +object stations
+   +array registeredUsers
+
+   +register(user)
+   +logIn(username, password)
+   +addScooter(location, scooter)
+   +removeScooter(scooterToRemove)
+   }
+
+   @enduml

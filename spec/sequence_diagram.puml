@@ -1,0 +1,51 @@
+@startuml sequenceDiagram
+
+User -> ScooterApp: register(user)
+
+alt successful case
+
+    ScooterApp --> User: console.log - "user has been registered"
+
+else if user already registered
+
+    ScooterApp --> User: console.log - "user already registered"
+
+else if user < 17
+
+    ScooterApp --> User: console.log - "too young to register"
+
+end
+
+User -> ScooterApp: logIn(username, password)
+
+alt successful case
+
+    ScooterApp --> User: console.log - "user logged in successfully"
+
+else if user not in registeredUser object || password !== password argument
+
+    ScooterApp --> User: throw Error - "username or password is incorrect"
+
+end
+
+User -> Scooter: rent()
+
+alt successful case - if isBroken === false && charge > 20
+
+    Scooter --> User: console.log - "Enjoy the ride!"
+
+else if charge <= 20
+
+    Scooter --> User: throw Error - "Scooter low on battery, please charge."
+    User --> Scooter: recharge()
+
+else if none are applicable
+
+    Scooter --> User: throw Error - "Scooter is broken, please send a repair request"
+    User --> Scooter: requestRepair()
+
+end
+
+User -> Scooter: dock()
+
+@enduml
