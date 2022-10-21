@@ -10,6 +10,9 @@ describe("scooter object", () => {
       age: 20,
     });
   });
+  it("should be an object", () => {
+    expect(typeof scooter1).toBe("object");
+  });
   it("should have a station property", () => {
     expect(scooter1.station).toBe("Manhattan");
   });
@@ -39,6 +42,9 @@ describe("scooter object", () => {
   });
   it("should have an isBroken property which is a boolean", () => {
     expect(typeof scooter1.isBroken).toBe("boolean");
+  });
+  it("should have an docked property which is a boolean", () => {
+    expect(typeof scooter1.docked).toBe("boolean");
   });
 });
 
