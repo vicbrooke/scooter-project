@@ -47,13 +47,19 @@ describe("scooterApp methods", () => {
       let log = jest.spyOn(console, "log");
       scooterApp1.register(user1);
       scooterApp1.register(user1);
-      console.log(user1.username);
-      console.log(scooterApp1.registeredUsers);
       expect(log).toHaveBeenCalledWith("User already registered!");
     });
   });
+  // log in
+  describe("logIn(username, password", () => {
+    it("user not in registerdUsers or password does not match return message ", () => {
+      scooterApp1.register(user1);
+      expect(() => {
+        scooterApp1.logIn(user2);
+      }).toThrow("Username or password is incorrect.");
+    });
+  });
 });
-// log in
 
 // add scooter
 
