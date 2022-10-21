@@ -14,6 +14,10 @@ class Scooter {
     }
     throw new Error("Scooter is broken, please send a repair request.");
   }
+
+  dock(station) {
+    this.station = station;
+  }
 }
 
 const scooter1 = new Scooter("Manhattan", {

@@ -62,12 +62,19 @@ describe("scooter methods", () => {
     it("should throw and error if isBroken === true", () => {
       scooter1.isBroken = true;
       expect(() => {
+        scooter1.charge = 50;
         scooter1.rent();
       }).toThrow("Scooter is broken, please send a repair request.");
     });
   });
 
   //dock method
+  describe("dock method", () => {
+    it("should set the station property of the Scooter to the argument passed in", () => {
+      scooter1.dock("Brooklyn");
+      expect(scooter1.station).toBe("Brooklyn");
+    });
+  });
   //requestRepair method
   //charge method
 });
