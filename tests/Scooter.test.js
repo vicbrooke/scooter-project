@@ -83,6 +83,10 @@ describe("scooter methods", () => {
       scooter1.dock("Brooklyn");
       expect(scooter1.docked).toBe(true);
     });
+    it("should set user property to empty string", () => {
+      scooter1.dock("Brooklyn");
+      expect(scooter1.user).toBe("");
+    });
   });
   //requestRepair method
   //charge method

@@ -21,6 +21,7 @@ class Scooter {
     }
     this.station = station;
     this.docked = true;
+    this.user = "";
   }
 }
 
