@@ -37,6 +37,9 @@ describe("scooter object", () => {
     expect(scooter1.charge).toBeGreaterThanOrEqual(1);
     expect(scooter1.charge).toBeLessThanOrEqual(100);
   });
+  it("should have an isBroken property which is a boolean", () => {
+    expect(typeof scooter1.isBroken).toBe("boolean");
+  });
 });
 
 //Method tests
