@@ -54,6 +54,7 @@ class ScooterApp {
       const target = (element) => element.serial === scooterSerial;
       if (this.stations[key].some(target)) {
         this.stations[key].splice(this.stations[key].indexOf(target));
+        console.log("Scooter successfully removed.");
       }
     }
   }

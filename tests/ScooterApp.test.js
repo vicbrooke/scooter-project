@@ -85,9 +85,17 @@ describe("scooterApp methods", () => {
       scooter1 = new Scooter("Manhattan", user1);
       scooterApp1.addScooter("Bronx", scooter1);
     });
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
     it("should remove scooter from correct location list", () => {
       scooterApp1.removeScooter(scooter1);
       expect(scooterApp1.stations.Bronx).toHaveLength(0);
+    });
+    it("should log a message that the scooter has been removed", () => {
+      let log = jest.spyOn(console, "log");
+      scooterApp1.removeScooter(scooter1);
+      expect(log).toHaveBeenCalledWith("Scooter successfully removed.");
     });
   });
 });
