@@ -51,6 +51,9 @@ describe("scooter methods", () => {
     user1 = new User("John", "abc123", 20);
     scooter1 = new Scooter("Manhattan", user1);
   });
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   //rent method
   describe("rent method", () => {
     it("should log to the console if isBroken === false && charge > 20", () => {
@@ -97,10 +100,18 @@ describe("scooter methods", () => {
   //charge method
   describe("recharge method", () => {
     it("should update the Scooter's charge to 100", async () => {
-      const scooter1 = new Scooter();
+      let log = jest.spyOn(console, "log");
       await scooter1.recharge();
+      expect(log).toHaveBeenCalledWith("Charge complete");
       expect(scooter1.charge).toBe(100);
     });
   });
   //requestRepair method
+  describe("requestRepair method", () => {
+    it("should use a setTiemout timer to log a message that the repair has been completed", async () => {
+      let log = jest.spyOn(console, "log");
+      await scooter1.requestRepair();
+      expect(log).toHaveBeenCalledWith("Repair complete");
+    });
+  });
 });

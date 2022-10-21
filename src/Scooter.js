@@ -36,6 +36,14 @@ class Scooter {
 
     console.log("Charge complete");
   }
+
+  async requestRepair() {
+    console.log("Starting repair");
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    console.log("Repair complete");
+  }
 }
 
 const scooter1 = new Scooter("Manhattan", {
