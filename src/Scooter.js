@@ -1,6 +1,7 @@
-class Scooter{
-  // scooter code here
+class Scooter {
+  constructor(station) {
+    this.station = station;
+  }
 }
 
-
-module.exports = Scooter
+module.exports = Scooter;
