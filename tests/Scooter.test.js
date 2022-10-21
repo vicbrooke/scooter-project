@@ -4,11 +4,8 @@ const User = require("../src/User");
 //typeof scooter === object
 describe("scooter object", () => {
   beforeEach(() => {
-    scooter1 = new Scooter("Manhattan", {
-      username: "John",
-      passowrd: "abc123",
-      age: 20,
-    });
+    user1 = new User("John", "abc123", 20);
+    scooter1 = new Scooter("Manhattan", user1);
   });
   it("should be an object", () => {
     expect(typeof scooter1).toBe("object");
@@ -19,7 +16,7 @@ describe("scooter object", () => {
   it("should have a user property", () => {
     expect(scooter1.user).toEqual({
       username: "John",
-      passowrd: "abc123",
+      password: "abc123",
       age: 20,
     });
   });
@@ -50,8 +47,20 @@ describe("scooter object", () => {
 
 //Method tests
 describe("scooter methods", () => {
-  // tests here!
   //rent method
+  describe("rent method", () => {
+    beforeEach(() => {
+      user1 = new User("John", "abc123", 20);
+      scooter1 = new Scooter("Manhattan", user1);
+    });
+    it("should throw and error when charge is <= 20", () => {
+      scooter1.charge = 10;
+      expect(() => {
+        scooter1.rent();
+      }).toThrow("Scooter low on battery, please charge");
+    });
+  });
+
   //dock method
   //requestRepair method
   //charge method
