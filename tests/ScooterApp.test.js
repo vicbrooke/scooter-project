@@ -13,6 +13,12 @@ describe("ScooterApp object", () => {
   it("stations property should be an object", () => {
     expect(typeof scooterApp1.stations).toBe("object");
   });
+  it("should have a registeredUsersProperty", () => {
+    expect(scooterApp1).toHaveProperty("registeredUsers");
+  });
+  it("registeredUsers property should be an array", () => {
+    expect(Array.isArray(scooterApp1.registeredUsers)).toBe(true);
+  });
 });
 // register user
 

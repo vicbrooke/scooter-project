@@ -10,6 +10,7 @@ class ScooterApp {
       Bronx: [],
       StatenIsland: [],
     };
+    this.registeredUsers = [];
   }
 }
 
