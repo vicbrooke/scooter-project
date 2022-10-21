@@ -30,6 +30,13 @@ describe("scooter object", () => {
     expect(scooter1.serial).toBeGreaterThanOrEqual(1);
     expect(scooter1.serial).toBeLessThanOrEqual(1000);
   });
+  it("should have a charge property", () => {
+    expect(typeof scooter1.charge).toBe("number");
+  });
+  it("charge property should be >=1 and <=100", () => {
+    expect(scooter1.charge).toBeGreaterThanOrEqual(1);
+    expect(scooter1.charge).toBeLessThanOrEqual(100);
+  });
 });
 
 //Method tests
