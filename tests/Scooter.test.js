@@ -53,6 +53,12 @@ describe("scooter methods", () => {
   });
   //rent method
   describe("rent method", () => {
+    it("should log to the console if isBroken === false && charge > 20", () => {
+      scooter1.charge = 50;
+      let log = jest.spyOn(console, "log");
+      scooter1.rent();
+      expect(log).toHaveBeenCalledWith("Enjoy the ride!");
+    });
     it("should throw and error when charge is <= 20", () => {
       scooter1.charge = 10;
       expect(() => {
