@@ -23,6 +23,15 @@ class Scooter {
     this.docked = true;
     this.user = "";
   }
+
+  async recharge() {
+    console.log("Starting charge");
+
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // wait 2 seconds
+    this.charge = 100;
+
+    console.log("Charge complete");
+  }
 }
 
 const scooter1 = new Scooter("Manhattan", {

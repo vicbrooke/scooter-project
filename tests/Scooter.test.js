@@ -88,6 +88,13 @@ describe("scooter methods", () => {
       expect(scooter1.user).toBe("");
     });
   });
-  //requestRepair method
   //charge method
+  describe("recharge method", () => {
+    it("should update the Scooter's charge to 100", async () => {
+      const scooter1 = new Scooter();
+      await scooter1.recharge();
+      expect(scooter1.charge).toBe(100);
+    });
+  });
+  //requestRepair method
 });
