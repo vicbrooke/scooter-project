@@ -30,12 +30,14 @@ class ScooterApp {
   }
 
   logIn(username, password) {
-    console.log("app", this.registeredUsers.hasOwnProperty(username));
     if (
       !this.registeredUsers.hasOwnProperty(username) ||
-      this.registeredUsers.username.password !== password
+      this.registeredUsers[username].password !== password
     ) {
       throw new Error("Username or password is incorrect.");
+    } else {
+      this.registeredUsers[username].loggedIn = true;
+      console.log("User logged in successfully");
     }
   }
 }

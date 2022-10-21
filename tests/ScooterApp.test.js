@@ -55,8 +55,13 @@ describe("scooterApp methods", () => {
     it("user not in registerdUsers or password does not match return message ", () => {
       scooterApp1.register(user1);
       expect(() => {
-        scooterApp1.logIn(user2);
+        scooterApp1.logIn(user2.username, user2.password);
       }).toThrow("Username or password is incorrect.");
+    });
+    it("logIn method should mark correct user in registeredUser object loggedIn property to true", () => {
+      scooterApp1.register(user1);
+      scooterApp1.logIn(user1.username, user1.password);
+      expect(scooterApp1.registeredUsers[user1.username].loggedIn).toBe(true);
     });
   });
 });
