@@ -1,6 +1,7 @@
 class Scooter {
-  constructor(station) {
+  constructor(station, user) {
     this.station = station;
+    this.user = user;
   }
 }
 

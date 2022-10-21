@@ -13,6 +13,16 @@ describe("scooter object", () => {
   it("should have a station property", () => {
     expect(scooter1.station).toBe("Manhattan");
   });
+  it("should have a user property", () => {
+    expect(scooter1.user).toEqual({
+      username: "John",
+      passowrd: "abc123",
+      age: 20,
+    });
+  });
+  it("user property should be an object", () => {
+    expect(typeof scooter1.user).toBe("object");
+  });
 });
 
 //Method tests
