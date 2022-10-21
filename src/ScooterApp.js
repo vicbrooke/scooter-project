@@ -45,6 +45,18 @@ class ScooterApp {
     scooter.station = location;
     this.stations[location].push(scooter);
   }
+
+  removeScooter(scooterToRemove) {
+    const location = scooterToRemove.station;
+    const scooterSerial = scooterToRemove.serial;
+
+    for (const key in this.stations) {
+      const target = (element) => element.serial === scooterSerial;
+      if (this.stations[key].some(target)) {
+        this.stations[key].splice(this.stations[key].indexOf(target));
+      }
+    }
+  }
 }
 
 module.exports = ScooterApp;

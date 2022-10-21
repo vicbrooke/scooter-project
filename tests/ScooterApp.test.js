@@ -79,6 +79,15 @@ describe("scooterApp methods", () => {
       expect(scooterApp1.stations.Bronx).toEqual([scooter1]);
     });
   });
+  //remove scooter
+  describe("removeScooter(scooterToRemove", () => {
+    beforeEach(() => {
+      scooter1 = new Scooter("Manhattan", user1);
+      scooterApp1.addScooter("Bronx", scooter1);
+    });
+    it("should remove scooter from correct location list", () => {
+      scooterApp1.removeScooter(scooter1);
+      expect(scooterApp1.stations.Bronx).toHaveLength(0);
+    });
+  });
 });
-
-// remove scooter
