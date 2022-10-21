@@ -12,6 +12,17 @@ class ScooterApp {
     };
     this.registeredUsers = [];
   }
+
+  register(user) {
+    this.registeredUsers[user.username] = {
+      password: user.password,
+      age: user.age,
+      loggedIn: false,
+      accountChange: 0,
+    };
+
+    console.log("User has been registered.");
+  }
 }
 
 module.exports = ScooterApp;

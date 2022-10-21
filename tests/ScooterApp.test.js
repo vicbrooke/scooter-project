@@ -20,7 +20,21 @@ describe("ScooterApp object", () => {
     expect(Array.isArray(scooterApp1.registeredUsers)).toBe(true);
   });
 });
-// register user
+
+describe("scooterApp methods", () => {
+  beforeEach(() => {
+    user1 = new User("John", "abc123", 20);
+    scooterApp1 = new ScooterApp();
+  });
+  // register user
+  describe("register(user)", () => {
+    it("should add user to registeredUsers array if successful", () => {
+      let log = jest.spyOn(console, "log");
+      scooterApp1.register(user1);
+      expect(log).toHaveBeenCalledWith("User has been registered.");
+    });
+  });
+});
 
 // log in
 
