@@ -16,7 +16,7 @@ describe("ScooterApp object", () => {
   it("should have a registeredUsersProperty", () => {
     expect(scooterApp1).toHaveProperty("registeredUsers");
   });
-  it("registeredUsers property should be an array", () => {
+  it.skip("registeredUsers property should be an array", () => {
     expect(Array.isArray(scooterApp1.registeredUsers)).toBe(true);
   });
 });
@@ -24,17 +24,21 @@ describe("ScooterApp object", () => {
 describe("scooterApp methods", () => {
   beforeEach(() => {
     user1 = new User("John", "abc123", 20);
+    user2 = new User("Sam", "abc123", 15);
     scooterApp1 = new ScooterApp();
   });
+
   // register user
   describe("register(user)", () => {
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
     it("should add user to registeredUsers array if successful", () => {
       let log = jest.spyOn(console, "log");
       scooterApp1.register(user1);
       expect(log).toHaveBeenCalledWith("User has been registered.");
     });
     it("if user age < 17 return message", () => {
-      const user2 = new User("Sam", "abc123", 15);
       let log = jest.spyOn(console, "log");
       scooterApp1.register(user2);
       expect(log).toHaveBeenCalledWith("Too young to register!");
