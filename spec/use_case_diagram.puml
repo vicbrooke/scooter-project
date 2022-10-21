@@ -7,6 +7,8 @@ usecase "Register user" as UC1
 usecase "Log in" as UC2
 usecase "Add scooter" as UC3
 usecase "Remove scooter" as UC4
+usecase "Charge scooter" as UC5
+usecase "Request repair" as UC6
 }
 
 g --> UC1: register(user)
@@ -15,6 +17,8 @@ g --> s: rent()
 s --> UC4
 g --> s: dock()
 s --> UC3
+s --> UC5
+s --> UC6
 
 
 @enduml
